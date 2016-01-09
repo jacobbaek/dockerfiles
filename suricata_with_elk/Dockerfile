@@ -12,6 +12,7 @@ RUN apt-get -qqy install libpcre3 \
 
 RUN wget http://www.openinfosecfoundation.org/download/suricata-2.0.11.tar.gz
 RUN tar xvzf suricata-2.0.11.tar.gz
-RUN cd suricata-2.0.11
+
+WORKDIR suricata-2.0.11
 RUN ./configure && make && sudo make install-full
 
