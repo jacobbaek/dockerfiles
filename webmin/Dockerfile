@@ -7,6 +7,7 @@ ADD jcameron-key.asc jcameron-key.asc
 RUN rpm --import jcameron-key.asc
 
 RUN yum install -y webmin
+RUN echo 'password' | passwd --stdin root
 RUN echo "nofork=1" >> /etc/webmin/miniserv.conf
 
 CMD /etc/webmin/start
